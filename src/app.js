@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -11,22 +12,28 @@ const ExpenseDashboardPage = ()=>(
   <div>Lets get started with React Router 101</div>
 );
 
-const AddExpenseComponent = ()=>(
+const AddExpense = ()=>(
   <div>Lets get started adding expenses</div>
 );
 
-const EditExpensesComponent = () => <div>Lets EDIT expenses</div>;
+const EditExpense = () => 
+<div>Lets EDIT expenses</div>;
 
-const HelpPageComponent = () => <div>Lets get some HELP</div>;
+const HelpPage = () => 
+<div>Lets get some HELP</div>;
+
+const NotFoundPage = () =>
+ <div> 404! Page not found </div>;
 
 const routes =
 <BrowserRouter>
-<div>
+<Switch>
 <Route path="/" component={ExpenseDashboardPage} exact={true}/>
-<Route path="/create" component={AddExpenseComponent}/>
-<Route path="/edit" component={EditExpensesComponent}/>
-<Route path="/help" component={HelpPageComponent}/>
-</div>
+<Route path="/create" component={AddExpense}/>
+<Route path="/edit" component={EditExpense}/>
+<Route path="/help" component={HelpPage}/>
+<Route component={NotFoundPage}/>
+</Switch>
 </BrowserRouter>
 ;
 
