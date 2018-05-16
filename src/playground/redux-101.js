@@ -42,7 +42,6 @@ const unsubscribe = store.subscribe(() => {
 });
 
 // An obj that gets sent to the store
-
 //Actions examples : increment , decrement , reset
 
 //Action : Increment the coun by 1
