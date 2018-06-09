@@ -28,33 +28,37 @@ const store = createStore((state = {
   count: 0
 }, action) => {
   
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        count: state.count + action.incrementBy
-      };
-    case "DECREMENT":
-      return {
-        count: state.count - action.decrementBy
-      };
-      case "MULTIPLYBYTEN":
-    const multiply10 = typeof action.multiply10==="number" ? action.multiply10 : 1
-      return {
-        count: state.count * multiply10
-      };
-    case "SET":
-    return{
-      count : action.count
+//reducers
+const countReducer = (state = {count : 0},action) =>{
+switch (action.type) {
+  case "INCREMENT":
+    return {
+      count: state.count + action.incrementBy
+    };
+  case "DECREMENT":
+    return {
+      count: state.count - action.decrementBy
+    };
+  case "MULTIPLYBYTEN":
+    const multiply10 = typeof action.multiply10 === "number" ? action.multiply10 : 1
+    return {
+      count: state.count * multiply10
+    };
+  case "SET":
+    return {
+      count: action.count
     }
-    case "RESET":
-      return {
-        count: 0
-      };
-    
-    default:
-      return state;
-  }
+  case "RESET":
+    return {
+      count: 0
+    };
+
+  default:
+    return state;
+}
+}
 });
+
 // store.subscribe(()=>{
 // console.log(store.getState());
 // }
