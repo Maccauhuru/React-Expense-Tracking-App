@@ -18,6 +18,7 @@
     "redux": "^3.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uuid": "^3.1.0",
     "validator": "^9.4.1",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
@@ -32,7 +33,8 @@
     "serve": "live-server public/",
     "build": "webpack -d",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "dev-server": "webpack-dev-server --mode development"
+    "dev-server": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development"
   },
   "devDependencies": {}
 }
