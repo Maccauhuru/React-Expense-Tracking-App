@@ -36,5 +36,7 @@
     "dev-server": "webpack-dev-server --mode development",
     "start": "webpack-dev-server --mode development"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
 }
