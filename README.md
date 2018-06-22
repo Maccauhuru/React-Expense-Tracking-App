@@ -1,5 +1,5 @@
-# Indecision App
-App that helps users decide on what activity to do next
+# Expensify App
+App that helps users to track and manage their personal expenses
 
 
 ## Technologies
