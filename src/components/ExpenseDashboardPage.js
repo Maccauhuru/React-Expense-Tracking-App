@@ -1,7 +1,11 @@
 import React from "react";
+import ExpenseList from './ExpenseList';
+import ExpenseListItem from './ExpenseListItem';
 
-const ExpenseDashboardPage = () => 
-  <div>Lets get started with React Router 101</div>
-;
+const ExpenseDashboardPage =()=> 
+  (<div>
+  <ExpenseList />
+  </div>)
+
 
 export default ExpenseDashboardPage;
