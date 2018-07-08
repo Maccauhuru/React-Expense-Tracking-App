@@ -12,7 +12,8 @@ export default class ExpenseForm extends Component{
         note : '',
         amount : '',
         createdAt : moment(),
-        calenderFocused : false
+        calenderFocused : false,
+        error: ''
     }
 
     onDescriptionChange = (e)=>{
@@ -27,15 +28,16 @@ export default class ExpenseForm extends Component{
 
     onAmountChange =(e)=>{
     const amount = e.target.value;
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
        this.setState(() => ({amount}));
     }
     }
     
     onDateChange =(createdAt)=>{
+        (createdAt)? 
         this.setState(()=>({
             createdAt
-        }))
+        })) : 'null'
     }
     
     onFocusChange =({focused})=>{
@@ -44,10 +46,22 @@ export default class ExpenseForm extends Component{
      }))
     }
 
+    onSubmit = (e)=>{
+    e.preventDefault();
+        (!this.state.description || !this.state.amount) ? this.setState(() => ({ error: 'Please enter description & amount'})) : this.setState(()=>({error : ''}));
+        this.props.onSubmit({
+            description : this.state.description,
+            amount : parseFloat(this.state.amount ,10) * 100,
+            createdAt : this.state.createdAt.valueOf(),
+            note : this.state.note
+        })
+    }
+
     render(){
         return(
             <div>
-            <form>
+            {this.state.error && <p>{this.state.error}</p>}
+            <form onSubmit={this.onSubmit}>
             <input type='text'
               placeholder='Description'
               value = {this.state.description}
