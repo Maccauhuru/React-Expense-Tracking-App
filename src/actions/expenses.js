@@ -1,10 +1,5 @@
 import uuid from 'uuid';
-
-
-
-
 { /*CREATE ACTION GENERATORS*/ }
-
 //ADD_EXPENSE
  export const addExpense = ({
     description = '',
