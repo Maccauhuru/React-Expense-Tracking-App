@@ -36,7 +36,7 @@ expense :{
     ...expenseData,
     id : expect.any(String)
 }
-})
+});
 });
 
 
