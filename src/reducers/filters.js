@@ -23,7 +23,7 @@ switch(action.type){
   case 'SORT_BY_DATE' : {
     return{
       ...state,
-      sortBy: action.startDate
+      sortBy: 'date'
     }
   }
   case 'SET_START_DATE' :{
