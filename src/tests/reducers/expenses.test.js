@@ -28,28 +28,43 @@ expect(state).toEqual(expenses);
 });
 
 test('should add expense by id',()=>{
+const expense = {
+id : '1000',
+description : 'Laptop',
+note : 'used laptop',
+createdAt : 20000,
+amount : 34500
+}
 const action = {
     type: 'ADD_EXPENSE',
-    id : expenses[3]
+    expense : expense
 };
 const state = expensesReducer(expenses,action);
-expect(state).toEqual([...expenses,expenses[3]]);
+expect(state).toEqual([...expenses,expense]);
 });
 
 test('should edit expenses by id',()=>{
+const description = 'Home Insurance';
 const action = {
     type: 'EDIT_EXPENSE',
-    id : expenses[1].id
+    id : expenses[2].id,
+    updates : {
+        description
+    }
 };
 const state = expensesReducer(expenses,action);
-expect(state).toEqual(expenses);
+expect(state[2].description).toBe(description);
 });
 
 
 test('should not edit expense if id not exist',()=>{
+const description = 'Home Insurance';
 const action = {
     type: 'EDIT_EXPENSE',
-    id : -1
+    id : -1,
+    updates :{
+        description
+    }
 };
 const state = expensesReducer(expenses,action);
 expect(state).toEqual(expenses);
