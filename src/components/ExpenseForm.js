@@ -51,16 +51,24 @@ export default class ExpenseForm extends Component{
      }))
     }
 
-    onSubmit = (e)=>{
+onSubmit = (e) => {
     e.preventDefault();
-        (!this.state.description || !this.state.amount) ? this.setState(() => ({ error: 'Please enter description & amount'})) : this.setState(()=>({error : ''}));
-        this.props.onSubmit({
-            description : this.state.description,
-            amount : parseFloat(this.state.amount ,10) * 100,
-            createdAt : this.state.createdAt.valueOf(),
-            note : this.state.note
-        })
+    if (!this.description || !this.amount) {
+        this.setState(() => ({
+            error: 'please provide both description and amount'
+        }));
+    } else {
+        this.setState(() => ({
+            error: ''
+        }));
+ this.props.onSubmit({
+     description: this.state.description,
+     amount: parseFloat(this.state.amount, 10) * 100,
+     createdAt: this.state.createdAt.valueOf(),
+     note: this.state.note
+ });
     }
+};
 
     render(){
         return(
