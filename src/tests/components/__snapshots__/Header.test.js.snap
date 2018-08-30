@@ -1,26 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render heading correctly 1`] = `
-<div>
-  <header>
-    <h1>
-      _&gt;Expensify App
-    </h1>
-  </header>
+exports[`should render Header correctly 1`] = `
+<header>
+  <h1>
+    Expensify
+  </h1>
   <NavLink
     activeClassName="is-active"
-    ariaCurrent="true"
     exact={true}
     to="/"
   >
-    Home
+    Dashboard
   </NavLink>
   <NavLink
     activeClassName="is-active"
-    ariaCurrent="true"
     to="/create"
   >
-    Create
+    Create Expense
   </NavLink>
-</div>
+</header>
 `;
