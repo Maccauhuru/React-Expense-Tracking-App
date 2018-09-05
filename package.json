@@ -2,8 +2,11 @@
   "name": "expensify",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "Simba Mupfukudzwa",
   "license": "MIT",
+    "engines": {
+      "node": "8.11.3"
+    },
   "scripts": {
     "serve": "live-server public/",
     "build:prod": "webpack -p --env production",
