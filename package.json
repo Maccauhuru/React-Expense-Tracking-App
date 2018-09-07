@@ -4,9 +4,9 @@
   "main": "index.js",
   "author": "Simba Mupfukudzwa",
   "license": "MIT",
-    "engines": {
-      "node": "8.11.3"
-    },
+  "engines": {
+    "node": "8.11.3"
+  },
   "scripts": {
     "serve": "live-server public/",
     "build:prod": "webpack -p --env production",
@@ -14,7 +14,7 @@
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild":"npm run build:prod"
+    "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
