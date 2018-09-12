@@ -13,17 +13,16 @@ export class ExpenseListFilters extends React.Component {
   };
   onFocusChange = (calendarFocused) => {
     this.setState(() => ({ calendarFocused }));
+  }
+  onTextChange = (e) => {
+    this.props.setTextFilter(e.target.value);
   };
-  onTextChange =(e)=>{
-  this.props.setTextFilter(e.target.value);
-  };
-  onSortChange =(e)=>{
+  onSortChange = (e) => {
     if (e.target.value === 'date') {
-        this.props.sortByDate();
-            } 
-    else if (e.target.value === 'amount') {
-        this.props.sortByAmount();
-            }
+      this.props.sortByDate();
+    } else if (e.target.value === 'amount') {
+      this.props.sortByAmount();
+    }
   };
   render() {
     return (
@@ -55,18 +54,16 @@ export class ExpenseListFilters extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => 
-  ({
-    filters: state.filters
-  });
-;
-
-const mapDispatchToProps = dispatch => ({
-setTextFilter   : (text)=> dispatch(setTextFilter(text)),
-sortByDate      : ()=> dispatch(sortByDate()),
-sortByAmount    : ()=> dispatch(sortByAmount()),
-setStartDate    : (startDate)=> dispatch(setStartDate(startDate)),
-setEndDate      : (endDate)=> dispatch(setEndDate(endDate))
+const mapStateToProps = (state) => ({
+  filters: state.filters
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(ExpenseListFilters);
+const mapDispatchToProps = (dispatch) => ({
+  setTextFilter: (text) => dispatch(setTextFilter(text)),
+  sortByDate: () => dispatch(sortByDate()),
+  sortByAmount: () => dispatch(sortByAmount()),
+  setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+  setEndDate: (endDate) => dispatch(setEndDate(endDate))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);

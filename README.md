@@ -1,21 +1,7 @@
-# Expensify App
-App that helps users to track and manage their personal expenses
+# Git Commands
 
-
-## Technologies
-
-+React 6.24.1
-
-+Babel
-
-+React Presets
-
-+HTML5
-
-+CSS
-
-+JSX
-
-### Status
-
-This app is currently a work in progress and the git will get updated regularly until completion.
+git init - Create a new git repo
+git status - View the changes to your project code
+git add - Add files to staging area
+git commit - Creates a new commit with files from staging area
+git log - View recent commits
