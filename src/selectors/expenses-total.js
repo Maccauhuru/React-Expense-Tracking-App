@@ -1,8 +1,4 @@
-import React from 'react';
-import expenses from '../tests/fixtures/expenses';
-
-expenses.map(items => items.amount).reduce((acc, curr) => {
-    return acc + curr;
-});
-
-
+export default (expenses) => {
+    const reduced = expenses.map((expense) => expense.amount).reduce((a, b) => a + b, 0);
+    return expenses.length === 0 ? 0 : reduced
+}
