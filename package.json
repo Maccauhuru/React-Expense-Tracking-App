@@ -2,7 +2,7 @@
   "name": "expensify",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Simba M",
+  "author": "S.L.Mupfukudzwa",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
@@ -26,6 +26,7 @@
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
+    "numeral": "2.0.6",
     "react": "15.6.1",
     "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.3.0",
