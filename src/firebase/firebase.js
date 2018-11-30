@@ -11,20 +11,18 @@ firebase.initializeApp(config);
 const db = firebase.database();
 
 db.ref().set({
+artist: 'Sean Paul',
 riddim : "Bubble Up",
 year : 2005,
 available : true,
+stores : ['Apple Store','Google Play','Basecamp'],
 released : {
     songname : 'legalize it',
-    artist: 'Sean Paul',
     country: 'Jamaica',
     recorded : 2005,
     price : '$10.00'
 }
 });
-
-db.ref('other').set({
-    fans : 1000000,
-    weeks : '19 weeks',
-    platinum : true
-})
+//Change Firebase DB values
+// db.ref('released/price').set('$15.75');
+// db.ref('released/country').set('Kingston,Jamaica');
