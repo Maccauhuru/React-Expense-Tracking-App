@@ -10,24 +10,54 @@ const config = {
 firebase.initializeApp(config);
 const db = firebase.database();
 
-db.ref('expenses').push({
-    description :'Food',
-    note : '',
-    amount:12500,
-    createdAt:12081982
+db.ref('expenses')
+.once('value')
+.then((snapshot)=>{
+
+    const expenses = [];
+    snapshot.forEach((childSnapshot)=>{
+    expenses.push({
+        id : snapshot.key,
+        ...childSnapshot.val()
+    });
+    });
+    console.log(expenses);
 });
-db.ref('expenses').push({
-    description :'Clothes',
-    note : '',
-    amount:1070,
-    createdAt:14071998
-});
-db.ref('expenses').push({
-    description :'Medicine',
-    note : '',
-    amount:89010,
-    createdAt:18031991
-});
+
+
+
+db.ref('expenses')
+    .once('value')
+    .then((snapshot) => {
+
+        const expenses = [];
+        snapshot.forEach((childSnapshot) => {
+            expenses.push({
+                id: snapshot.key,
+                ...childSnapshot.val()
+            });
+        });
+        console.log(expenses);
+    });
+
+// db.ref('expenses').push({
+//     description :'Food',
+//     note : '',
+//     amount:12500,
+//     createdAt:12081982
+// });
+// db.ref('expenses').push({
+//     description :'Clothes',
+//     note : '',
+//     amount:1070,
+//     createdAt:14071998
+// });
+// db.ref('expenses').push({
+//     description :'Medicine',
+//     note : '',
+//     amount:89010,
+//     createdAt:18031991
+// });
 
 // db.ref('notes').push({
 //     title: 'All eyes on me',
